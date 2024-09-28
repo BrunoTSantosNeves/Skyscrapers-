@@ -30,3 +30,11 @@ const char	*get_string(unsigned int value)
 	else
 		return("U");
 }
+
+void	solve_round(unsigned int, unsigned int value, struct s_resolutions_t *candidates, struct s_resolutions_t *resolutions)
+{
+	struct s_board_t	*candidate;
+	struct s_board_		*next_candidate;
+
+	candidate = candidates->first;
+
