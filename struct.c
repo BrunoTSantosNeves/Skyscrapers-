@@ -78,4 +78,6 @@ void	parse_consitions(char *cmdline, struct s_conditions_t *conds)
 	i = 0;
 	j = 0;
 
-	while ((cmdline[i] >= '0' && cmdline[i] <= '9'
+	while ((cmdline[i] >= '0' && cmdline[i] <= '9') || cmdline[i] == ' ')
+	{
+
