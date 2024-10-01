@@ -53,7 +53,7 @@ struct s_board_t	*solve(struct s_conditions_t *conds)
 	return (resolutions.first);
 }
 
-void	parse_consitions(char *cmdline, struct s_conditions_t *conds)
+void	parse_conditions(char *cmdline, struct s_conditions_t *conds)
 {
 	int	i;
 	int	j;
@@ -63,5 +63,30 @@ void	parse_consitions(char *cmdline, struct s_conditions_t *conds)
 
 	while ((cmdline[i] >= '0' && cmdline[i] <= '9') || cmdline[i] == ' ')
 	{
-		if (cmdline[i] >= '0' && 
+		if (cmdline[i] >= '0' && cmdline[i] <= '9')
+		{
+			(*conds).values[j] = cmdline[i] - '0';
+			j++;
+		}
+		i++;
+	}
+}	
+
+int	main(int argc, char *argv[])
+{
+	struct	s_conditions_t	conds;
+	struct	s_board_t	*resolution;
+
+	parse_conditions(argv[1], &conds);
+	(void)argc;
+
+	solution = solve(&conds);
+	if (solution == NULL || argc != 2)
+	{
+		write(1, "Error\n", 6);
+		return (1);
+	}
+	board_show(solution);
+	return (0);
+}
 
