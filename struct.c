@@ -70,4 +70,12 @@ struct s_board_t	*solve(struct s_conditions_t *conds)
 	return (resolutions.first);
 }
 
+void	parse_consitions(char *cmdline, struct s_conditions_t *conds)
+{
+	int	i;
+	int	j;
 
+	i = 0;
+	j = 0;
+
+	while ((cmdline[i] >= '0' && cmdline[i] <= '9'
