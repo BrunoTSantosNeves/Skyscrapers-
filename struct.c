@@ -20,7 +20,7 @@ void	solve_round(unsigned int, unsigned int value, struct s_resolutions_t *candi
 	struct s_board_		*next_candidate;
 
 	candidate = candidates->first;
-	while (candidate != NULL && ((next_candidate = candidate->next) || 1)
+	while (candidate != NULL)
 			evaluate_candite(round, value, candidate, resolutions);
 			free(candidate);
 			candidate = next_candidate;
