@@ -7,28 +7,11 @@
 
 const char	*get_string(unsigned int value)
 {
-	if (value == 0)
-	{
-		return("0");
-	}
-	else if (value == 1)
-	{
-		return("1");
-	}
-	else if (value == 2)
-	{
-		return("2");
-	}
-	else if (value == 3)
-	{
-		return("3");
-	}
-	else if (value == 4)
-	{
-		return("4");
-	}
-	else
-		return("U");
+	static const char *values[] = {"0", "1", "2", "3", "4", "U"};
+	if (value <= 4)
+		return values[value];
+
+	return values[5];
 }
 
 void	solve_round(unsigned int, unsigned int value, struct s_resolutions_t *candidates, struct s_resolutions_t *resolutions)
@@ -80,4 +63,5 @@ void	parse_consitions(char *cmdline, struct s_conditions_t *conds)
 
 	while ((cmdline[i] >= '0' && cmdline[i] <= '9') || cmdline[i] == ' ')
 	{
+		if (cmdline[i] >= '0' && 
 
