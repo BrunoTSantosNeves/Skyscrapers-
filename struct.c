@@ -11,7 +11,7 @@ const char	*get_string(unsigned int value)
 	if (value <= 4)
 		return values[value];
 
-	return values[5];
+	return (values[5]);
 }
 
 void	solve_round(unsigned int, unsigned int value, struct s_resolutions_t *candidates, struct s_resolutions_t *resolutions)
