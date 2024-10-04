@@ -37,5 +37,22 @@ void	map_get_section(struct s_board_t *board, unsigned int round, unsigned int *
 		else
 		{
 			values[0] = (*board).values[3][round - 4];
+			values[1] = (*board).values[2][round - 4];
+			values[2] = (*board).values[1][round - 4];
+			values[3] = (*board).values[0][round - 4];
+		}
+	}
+	else
+	{
+		map_get_section2(board, round, values);
+	}
+}
+
+void	map_update_section2(struct s_board_t *board, unsigned int round, unsigned int *values)
+{
+	if (round < 12)
+	{
+		(*board).values[round - 8][0] = values[0];
+		(*board).values[round - 8][1] = values[1];
 
 
