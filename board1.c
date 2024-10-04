@@ -23,3 +23,19 @@ void	map_get_section2(struct s_board_t *board, unsigned int round, unsigned int 
 	}
 }
 
+void	map_get_section(struct s_board_t *board, unsigned int round, unsigned int *values)
+{
+	if (round < 8)
+	{
+		if (round < 4)
+		{
+			values[0] = (*board).values[0][round];
+			values[1] = (*board).values[1][round];
+			values[2] = (*board).values[2][round];
+			values[3] = (*board).values[3][round];
+		}
+		else
+		{
+			values[0] = (*board).values[3][round - 4];
+
+
