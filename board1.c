@@ -89,3 +89,21 @@ void	map_update_section(struct s_board_t *board, unsigned int round, unsigned in
 		map_update_section2(board, round, values);
 }
 
+void	map_init(struct s_board_t *board)
+{
+	int	r;
+	int	c;
+
+	r = 0;
+	while (r < 4)
+	{
+		c = 0;
+		while (c < 4)
+		{
+			(*board).values[r][c] = 0;
+			c++;
+		}
+		r++;
+	}
+	(*board).next = NULL;
+}
