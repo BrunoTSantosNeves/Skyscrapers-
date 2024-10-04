@@ -54,5 +54,38 @@ void	map_update_section2(struct s_board_t *board, unsigned int round, unsigned i
 	{
 		(*board).values[round - 8][0] = values[0];
 		(*board).values[round - 8][1] = values[1];
+		(*board).values[round - 8][2] = values[2];
+		(*board).values[round - 8][3] = values[3];
+	}
+	else
+	{
+		(*board).values[round - 12][3] = values[0];
+		(*board).values[round - 12][2] = values[1];
+		(*board).values[round - 12][1] = values[2];
+		(*board).values[round - 12][0] = values[3];
+	}
+}
 
+void	map_update_section(struct s_board_t *board, unsigned int round, unsigned int *values)
+{
+	if (round < 8)
+	{
+		if (round < 4)
+		{
+			(*board).values[0][round] = values[0];
+			(*board).values[1][round] = values[1];
+			(*board).values[2][round] = values[2];
+			(*board).values[3][round] = values[3];
+		}
+		else
+		{
+			(*board).values[3][round - 4] = values[0];
+			(*board).values[2][round - 4] = values[1];
+			(*board).values[1][round - 4] = values[2];
+			(*board).values[0][round - 4] = values[3];
+		}
+	}
+	else
+		map_update_section2(board, round, values);
+}
 
