@@ -1,6 +1,8 @@
 #ifndef BOARD0_H
 #define BOARD0_H
 
+#include "struct.h"
+
 struct s_board_t	*map_clone(struct s_board_t *src);
 
 void	board_show(struct s_board_t *board);
